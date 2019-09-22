@@ -32,6 +32,8 @@ function handleSongChange(){
 window.onload = function() {
   initialize_display();
   attachEventHandlers();
+}
+function startContext(){
   var ctx = new AudioContext();
   var audio = document.getElementById('myAudio');
   var audioSrc = ctx.createMediaElementSource(audio);
@@ -77,6 +79,7 @@ window.onload = function() {
 };
 
 function startApp(){
+  startContext();
   document.getElementById('myAudio').play()
   
 }
