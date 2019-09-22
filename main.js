@@ -19,6 +19,7 @@ function initialize_display(){
 }
 function attachEventHandlers(){
   document.querySelector('#audioSelect').addEventListener('change', handleSongChange);
+  document.querySelector('#start').addEventListener('click', startApp)
 }
 function handleSongChange(){
   var player = document.querySelector('#myAudio')
@@ -69,9 +70,14 @@ window.onload = function() {
         bar_array[i].css('height',average_array[i]+'px');
      }
   }
-  audio.play();
-  
   renderFrame();
+  
+  
 
 };
+
+function startApp(){
+  document.getElementById('myAudio').play()
+  
+}
 
