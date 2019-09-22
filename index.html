@@ -10,7 +10,16 @@
 	<script src="main.js"></script>
 </head>
 <body>
-	<audio id="myAudio" oldsrc="pacific_rim_main.mp4" src="mainstreet_electrical_parade.mp4" controls></audio>
+	<select id="audioSelect">
+		<option value="pacific_rim_main.mp4">pacific rim</option>
+		<option value="mainstreet_electrical_parade.mp4">main street electrical parade</option>
+		<option value="misty_mountain_cold.mp4">misty mountain cold (half fidelity)</option>
+		<option value="misty_mountains_cold.mp4">misty mountain cold (full fidelity)</option>
+		<option value="shout_tears_for_fears.mp3">Shout</option>
+
+
+	</select>
+	<audio id="myAudio" src="pacific_rim_main.mp4" oldsrc="mainstreet_electrical_parade.mp4" controls></audio>
 	<div id="visualizer"></div>
 </body>
 </html>

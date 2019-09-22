@@ -17,9 +17,20 @@ function initialize_display(){
   }
   container.append(bar_array);
 }
+function attachEventHandlers(){
+  document.querySelector('#audioSelect').addEventListener('change', handleSongChange);
+}
+function handleSongChange(){
+  var player = document.querySelector('#myAudio')
+  player.src = document.querySelector('#audioSelect').value;
+  player.load();
+  player.play();
+}
+//$(document).ready(initialize_display);
 
-$(document).ready(initialize_display);
 window.onload = function() {
+  initialize_display();
+  attachEventHandlers();
   var ctx = new AudioContext();
   var audio = document.getElementById('myAudio');
   var audioSrc = ctx.createMediaElementSource(audio);
@@ -39,7 +50,7 @@ window.onload = function() {
      // update data in frequencyData
      analyser.getByteFrequencyData(frequencyData);
      // render frame based on values in frequencyData
-     console.log(frequencyData)
+     //console.log(frequencyData)
      var average=0;
      var average_array = [];
      var reduction_amount = 100;
